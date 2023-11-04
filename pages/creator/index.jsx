@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import React from "react";
@@ -21,7 +20,7 @@ const index = () => {
         </p>
       </div>
 
-      <div className="flex items-center justify-center gap-x-8">
+      <div className="flex items-center justify-center gap-x-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -144,8 +143,9 @@ const index = () => {
           ></polygon>
         </svg>
       </div>
+
       <div className="flex flex-col mx-auto gap-y-5 items-center justify-center">
-        <h3 className="text-2xl bg-gradient-to-tr from-pink-400 to-blue-400 bg-clip-text text-transparent font-bold">
+        <h3 className="text-3xl bg-gradient-to-tr from-pink-400 to-blue-400 bg-clip-text text-transparent font-bold">
           Loved by 100+ Creators
         </h3>
         <div className="w-1/2 flex flex-wrap items-center justify-center gap-y-2 gap-x-4">
@@ -424,4 +424,3 @@ const index = () => {
 };
 
 export default index;
-
