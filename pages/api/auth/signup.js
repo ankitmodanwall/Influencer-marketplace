@@ -22,7 +22,7 @@ const signup = async (req, res) => {
                     let u = new User({ name, email, password: CryptoJS.AES.encrypt(password, process.env.SECRET_KEY).toString(),role });
                     await u.save();
                     let token = jwt.sign({ name: name, email: email,role:role }, process.env.JWT_SECRET, { expiresIn: '28d' });
-                    res.status(200).json({ success: true, message: 'Account Created successfully Now you can login', token: token });
+                    res.status(200).json({ success: true, message: 'Account Created successfully Now you can login', token: token,role:role,email:email, name:name });
                 } catch (error) {
                     res.status(200).json({ success: false, error});
                 }

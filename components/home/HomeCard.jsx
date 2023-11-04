@@ -9,7 +9,6 @@ const HomeCard = ({ imageLink, platform, price, categories }) => {
         width={280}
         height={280}
         quality={100}
-        style={'cover'}
         className='rounded-lg bg-white p-2 sm:p-auto md:p-auto h-[300px] object-cover shadow-md ring-1 ring-gray-900/10'
       />
       <div className='flex justify-between'>
