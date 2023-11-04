@@ -13,6 +13,7 @@ const login = async (req, res) => {
                     creator.name = req.body.name;
                     creator.email = req.body.email;
                     creator.role = "creator";
+                    creator.platforms = req.body.platforms?req.body.platforms:creator.platforms;
                     creator.profileImage = req.body.profileImage?req.body.profileImage:creator.profileImage;
                     creator.bannerImages = req.body.bannerImages?req.body.bannerImages:creator.bannerImages;
                     creator.category = req.body.category?req.body.category:creator.category;
