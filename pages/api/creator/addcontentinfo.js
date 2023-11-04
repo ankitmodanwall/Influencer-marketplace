@@ -10,9 +10,11 @@ const login = async (req, res) => {
             try {
                 const creator = await Creator.findOne({ email: req.body.email });
                 if (creator) {
-                    creator.packages = req.body.packages
+                    creator.category = req.body.category,
+                    creator.description= req.body.description,
+                    creator.platforms=req.body.platforms
                     await creator.save();
-                    res.status(200).json({ success: true, message: "packages Updated" });
+                    res.status(200).json({ success: true, message: "Content Info Updated" });
                     return;
                 }else{
                  

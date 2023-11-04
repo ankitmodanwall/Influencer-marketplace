@@ -10,18 +10,10 @@ const login = async (req, res) => {
             try {
                 const creator = await Creator.findOne({ email: req.body.email });
                 if (creator) {
-                    creator.name = req.body.name;
-                    creator.email = req.body.email;
-                    creator.role = "creator";
-                    creator.platforms = req.body.platforms?req.body.platforms:creator.platforms;
-                    creator.profileImage = req.body.profileImage?req.body.profileImage:creator.profileImage;
-                    creator.bannerImages = req.body.bannerImages?req.body.bannerImages:creator.bannerImages;
-                    creator.category = req.body.category?req.body.category:creator.category;
-                    creator.location = req.body.location?req.body.location:creator.location;
-                    creator.achievments = req.body.achievments?req.body.achievments:creator.achievments;
-                    creator.description = req.body.description?req.body.description:creator.description;
-                    creator.packages = req.body.packages?req.body.packages:creator.packages;
-                    creator.sample = req.body.sample?req.body.sample:creator.sample;
+                    creator.name=req.body.name,
+                    creator.phone=req.body.phone,
+                    creator.city=req.body.city,
+                    creator.state=req.body.state
                     await creator.save();
                     res.status(200).json({ success: true, message: "Creator Updated" });
                     return;

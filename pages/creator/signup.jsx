@@ -10,7 +10,8 @@ export default function Example() {
         name: "",
         email: "",
         password: "",
-        role:"creator"
+        role:"creator",
+        username:""
     })
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -102,7 +103,17 @@ Join as a creator                </h1>
                 <div className=" w-full ">
                     <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 w-80 my-10 mx-auto">
 
-                        
+                    <input
+                            onChange={handleChange}
+                            id="username"
+                            name="username"
+                            type="text"
+                            value={userInfo.username}
+                         
+                            className="border-2 border-gray-300 p-2 rounded-lg"
+                            placeholder="username"
+
+                        />
                         <input
                             onChange={handleChange}
                             id="text"
