@@ -9,7 +9,6 @@ const HomeCard = ({ imageLink, platform, price, categories }) => {
         width={280}
         height={280}
         quality={100}
-        style={'cover'}
         className='rounded-lg bg-white p-2 sm:p-auto md:p-auto h-[300px] object-cover shadow-md ring-1 ring-gray-900/10'
       />
       <div className='flex justify-between'>
@@ -17,11 +16,17 @@ const HomeCard = ({ imageLink, platform, price, categories }) => {
         <p>₹{price}</p>
       </div>
       <div className='flex max-w-[250px] flex-wrap'>
-        {categories.map((category) => {
+        {categories.map((category, idx) => {
           return category == categories[categories.length - 1] ? (
-            <span className='text-slate-500 text-sm'> {category}</span>
+            <span key={idx} className='text-slate-500 text-sm'>
+              {' '}
+              {category}
+            </span>
           ) : (
-            <span className='text-slate-500 text-sm'> {category}, </span>
+            <span key={idx} className='text-slate-500 text-sm'>
+              {' '}
+              {category},{' '}
+            </span>
           );
         })}
       </div>

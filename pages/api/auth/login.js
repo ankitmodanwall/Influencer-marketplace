@@ -14,7 +14,7 @@ const login = async (req, res) => {
                 let decryptedPassword = bytes.toString(CryptoJS.enc.Utf8);
                 if (req.body.email === user.email && req.body.password === decryptedPassword) {
                     let token = jwt.sign({ name: user.name, email: user.email ,role:user.role}, process.env.JWT_SECRET, { expiresIn: '28d' });
-                    res.status(200).json({ success: true, token: token, message: 'Login Successful' });
+                    res.status(200).json({ success: true, token: token, message: 'Login Successful' ,role:user.role,email:user.email});
                 }
                 else {
                     res.status(200).json({ success: false, error: 'Invalid credentials' });

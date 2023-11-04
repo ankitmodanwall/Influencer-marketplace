@@ -19,7 +19,7 @@ export default function Example() {
             [name]: value,
         })
     }
-    const handleSubmit = (e) => {
+    const handleSubmit =  (e) => {
         e.preventDefault()
         console.log(userInfo)
 
@@ -35,19 +35,32 @@ export default function Example() {
             .then((data) => {
                 console.log(data)
                 if (data.success) {
-                    toast.success(data.message, {
-                        position: "top-left",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                    });
-                    if (typeof window !== "undefined") {
-                        localStorage.setItem("user", JSON.stringify(data.token))
-                    }
+                    fetch("/api/creator/profileupdate", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Basic ${btoa("junaid:2002")}`,
+                        },
+                        body: JSON.stringify(userInfo),
+                    }).then((res) => res.json())
+                    .then((dat) => {
+                        toast.success(dat.message, {
+                            position: "top-left",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                        });
+                        if (typeof window !== "undefined") {
+                            localStorage.setItem("user", JSON.stringify(data))
+                        }
+                        setTimeout(() => {
+                            router.push("/creator/profilesetup")
+                        }, 1000)
+                    })
                     // setTimeout(() => {
                     //     router.push("/creator")
                     // }, 1000)
@@ -84,8 +97,7 @@ export default function Example() {
             {/* <Navbar /> */}
             <div className="h-max text-center py-20">
                 <h1 className="text-3xl font-semibold mt-10">
-                    Create Your account
-                </h1>
+Join as a creator                </h1>
 
                 <div className=" w-full ">
                     <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 w-80 my-10 mx-auto">
