@@ -46,10 +46,20 @@ export default function Example() {
             theme: "light",
           });
           if (typeof window !== "undefined") {
-            localStorage.setItem("user", JSON.stringify(data.token));
+            localStorage.setItem("user", JSON.stringify({
+              email: data.email,
+              role: data.role,
+              token: data.token,
+            }));
           }
           setTimeout(() => {
-            router.push("/");
+            if (data.role === "brand") {
+              router.push("/brand");
+            }else if (data.role === "creator") {
+              router.push("/creator");
+            }else {
+              router.push("/");
+            }
           }, 1000);
         } else {
           toast.error(data.error, {
