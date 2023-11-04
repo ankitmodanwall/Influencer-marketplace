@@ -57,3 +57,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+.tag {
+  @apply text-sm py-2 px-4 bg-gray-200;
+}
