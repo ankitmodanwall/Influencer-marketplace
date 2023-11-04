@@ -796,3 +796,7 @@
     margin: 17% 0 4% 0;
   }
 }
+
+.tag {
+  @apply text-sm py-2 px-4 bg-gray-200;
+}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from 'react-toastify';
