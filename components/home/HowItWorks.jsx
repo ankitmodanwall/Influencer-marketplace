@@ -20,7 +20,7 @@ const HowItWorks = () => {
               <div className='step-num'>1</div>
               <h3 className='step-title'>Search Influencers</h3>
               <div className='step-txt'>
-                Search through thousands of vetted Instagram, TikTok, and
+                Search through thousands of vetted Instagram, Facebook, and
                 YouTube influencers.
               </div>
             </div>
@@ -36,8 +36,8 @@ const HowItWorks = () => {
               <div className='step-num'>2</div>
               <h3 className='step-title'>Purchase Securely</h3>
               <div className='step-txt'>
-                Safely purchase through Collabstr. We hold your payment until
-                the work is completed.
+                Safely purchase through us. We hold your payment until the work
+                is completed.
               </div>
             </div>
           </div>
