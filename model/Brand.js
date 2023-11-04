@@ -5,7 +5,7 @@ const BrandSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     role: { type: String,required:true ,default:"brand"},
     profileImage:{type: String,default:""},
-    category:{type:String,default:""},
+    category:{type:Array,default:[]},
     location:{type:String,default:""},
     description:{type:String,default:""},
     rating:{type:Number,default:0},
