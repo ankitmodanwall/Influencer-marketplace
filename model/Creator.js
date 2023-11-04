@@ -8,7 +8,7 @@ const CreatorSchema = new mongoose.Schema({
     bannerImages:{type: Array,default:[]},
     category:{type:String,default:""},
     location:{type:String,default:""},
-    achievments:{tyep:Array,default:[]},
+    achievments:{type:Array,default:[]},
     description:{type:String,default:""},
     packages:{type:Array,default:[]},
     rating:{type:Number,default:0},
