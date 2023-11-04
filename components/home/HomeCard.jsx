@@ -17,11 +17,17 @@ const HomeCard = ({ imageLink, platform, price, categories }) => {
         <p>₹{price}</p>
       </div>
       <div className='flex max-w-[250px] flex-wrap'>
-        {categories.map((category) => {
+        {categories.map((category, idx) => {
           return category == categories[categories.length - 1] ? (
-            <span className='text-slate-500 text-sm'> {category}</span>
+            <span key={idx} className='text-slate-500 text-sm'>
+              {' '}
+              {category}
+            </span>
           ) : (
-            <span className='text-slate-500 text-sm'> {category}, </span>
+            <span key={idx} className='text-slate-500 text-sm'>
+              {' '}
+              {category},{' '}
+            </span>
           );
         })}
       </div>
