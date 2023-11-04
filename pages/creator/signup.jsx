@@ -84,8 +84,7 @@ export default function Example() {
             {/* <Navbar /> */}
             <div className="h-max text-center py-20">
                 <h1 className="text-3xl font-semibold mt-10">
-                    Create Your account
-                </h1>
+Join as a creator                </h1>
 
                 <div className=" w-full ">
                     <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 w-80 my-10 mx-auto">

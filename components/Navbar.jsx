@@ -24,7 +24,7 @@ const Navbar = () => {
               Explore
             </Link>
             <Link
-              href='/explore'
+              href='/howitworks'
               className={buttonVariants({
                 variant: 'ghost',
                 size: 'sm'
@@ -42,7 +42,7 @@ const Navbar = () => {
               Login
             </Link>
             <Link
-              href='/register'
+              href='/brand/signup'
               className={buttonVariants({
                 variant: 'ghost',
                 size: 'sm'
@@ -52,7 +52,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href='/creator'
+              href='/creator/signup'
               className={buttonVariants({
                 variant: 'ghost',
                 size: 'sm'
