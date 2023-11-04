@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Reviews from "./Reviews";
 
 const index = () => {
   return (
@@ -18,7 +19,7 @@ const index = () => {
         </button>
       </div>
       <hr />
-      <div className="influencers p-5">
+      <div className="influencers p-5 pb-12">
         <h1 className="text-center p-4 text-5xl font-bold leading-snug">
           Select your favorite Influencer
         </h1>
@@ -86,7 +87,7 @@ const index = () => {
             </div>
           </div>
         </div>
-        <div className="youtube py-32">
+        <div className="youtube py-32 pb-56">
           <h1 className="p-4 text-3xl font-sans font-bold leading-snug">
             Youtube
           </h1>
@@ -151,6 +152,10 @@ const index = () => {
           </div>
         </div>
       </div>
+
+      <hr />
+
+      <Reviews />
     </div>
   );
 };
