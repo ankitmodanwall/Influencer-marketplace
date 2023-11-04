@@ -5,6 +5,7 @@ const CreatorSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     role: { type: String,required:true ,default:"creator"},
     profileImage:{type: String,default:""},
+    platforms:{type:Array,default:[]},
     bannerImages:{type: Array,default:[]},
     category:{type:String,default:""},
     location:{type:String,default:""},
