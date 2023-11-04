@@ -10,9 +10,9 @@ const login = async (req, res) => {
             try {
                 const creator = await Creator.findOne({ email: req.body.email });
                 if (creator) {
-                    creator.packages = req.body.packages
+                    creator.bannerImage = req.body.bannerImage;
                     await creator.save();
-                    res.status(200).json({ success: true, message: "packages Updated" });
+                    res.status(200).json({ success: true, message: "Banner Image Updated" });
                     return;
                 }else{
                  
