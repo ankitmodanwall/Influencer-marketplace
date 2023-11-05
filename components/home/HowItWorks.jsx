@@ -2,7 +2,7 @@ const HowItWorks = () => {
   return (
     <div>
       <div className='row-holder'>
-        <h2 className='row-title' id='how-it-works'>
+        <h2 className='row-title' id='howitworks'>
           How Influenzar Works
         </h2>
         <h3 className="row-subtitle">
