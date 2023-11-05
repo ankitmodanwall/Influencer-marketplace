@@ -46,14 +46,8 @@ const [userinfo, setUserinfo] = useState({
   ],
 
 })
-  const [packages, setPackages] = useState( [
-    {
-      platform: "instagram",
-      title:"",
-      price: "",
-      description: "",
-    },
-  ])
+console.log(userinfo)
+
 
 console.log(userinfo)
   useEffect(() => {
@@ -70,11 +64,10 @@ console.log(userinfo)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          setUserinfo(data);
+          setUserinfo(data.creator);
         });
     }
-  }
-  , []);
+  }, []);
   const handleProfileImage = async (email,image) => {
     await fetch("/api/creator/profileImageupdate", {
       method: "POST",
@@ -130,7 +123,7 @@ console.log(userinfo)
         console.log(data);
       });
   }
-  const handleContentInfo = async () => {
+  const handleContentInfo = async (e) => {
     e.preventDefault()
     await fetch("/api/creator/addcontentinfo", {
       method: "POST",
@@ -139,6 +132,7 @@ console.log(userinfo)
         "Authorization": `Basic ${btoa("junaid:2002")}`,
       },
       body: JSON.stringify({
+        email: userinfo.email,
         category: userinfo.category,
         description: userinfo.description,
         platforms:userinfo.platforms
@@ -150,6 +144,7 @@ console.log(userinfo)
       });
   }  
   const handlePackagesInfo = async (e) => {
+    e.preventDefault()
     await fetch("/api/creator/addpackages", {
       method: "POST",
       headers: {
@@ -157,6 +152,7 @@ console.log(userinfo)
         "Authorization": `Basic ${btoa("junaid:2002")}`,
       },
       body: JSON.stringify({
+        email: userinfo.email,
        packages:userinfo.packages
       }),
     })
@@ -179,18 +175,18 @@ console.log(userinfo)
                   <div className="mt-5 md:mt-0 md:col-span-2">
                   <div className="w-full block gap-5  items-center justify-between px-20 ">
                         
-                        <Image src={userinfo.bannerImage} width={800} height={200} alt=""  className="w-[1000px] h-28 object-cover rounded-sm mx-auto m-2 bg-gray-300"/>
+                        <Image src={userinfo?.bannerImage} width={800} height={200} alt=""  className="w-[1000px] h-28 object-cover rounded-sm mx-auto m-2 bg-gray-300"/>
                                               <UploadButton
                                               
                                 endpoint="imageUploader"
                                 className=""
-                                onClientUploadComplete={(res) => {
+                                onClientUploadComplete={async(res) => {
                         
                                   // Do something with the response
                                   console.log("Files: ", res);
-                                  handleBannerImage(userinfo.email,res[0].fileUrl);
-                                  setUserinfo({ ...userinfo, profileImage: res[0].fileUrl });
-                                  // alert("Upload Completed");
+                                await handleBannerImage(userinfo.email,res[0].fileUrl);
+                                  setUserinfo({ ...userinfo, bannerImage: res[0].fileUrl });
+
                                 }}
                                 onUploadError={(error) => {
                                   // Do something with the error.
@@ -199,7 +195,7 @@ console.log(userinfo)
                               /></div>
                   <div className="w-full block gap-5  items-center justify-between px-20 ">
                         
-                        <Image src={userinfo.profileImage} width={200} height={200} alt=""  className="w-28 h-28 object-cover rounded-full mx-auto m-2 bg-gray-300"/>
+                        <Image src={userinfo?.profileImage} width={200} height={200} alt=""  className="w-28 h-28 object-cover rounded-full mx-auto m-2 bg-gray-300"/>
                                               <UploadButton
                                               
                                 endpoint="imageUploader"
@@ -337,7 +333,7 @@ required autoComplete="category" className="block w-full border-gray-300 rounded
                                             ...userinfo,state:e.target.value
                                           })
                                         }}
-required autoComplete="shipping address-level1" className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"><option value="AN">Andaman and Nicobar Islands</option><option value="AP">Andhra Pradesh</option><option value="AR">Arunachal Pradesh</option><option value="AS">Assam</option><option value="BR">Bihar</option><option value="CH">Chandigarh</option><option value="CG">Chhattisgarh</option><option value="DN">Dadra and Nagar Haveli</option><option value="DD">Daman and Diu</option><option value="DL">Delhi</option><option value="GA">Goa</option><option value="GJ">Gujarat</option><option value="HR">Haryana</option><option value="HP">Himachal Pradesh</option><option value="JK">Jammu and Kashmir</option><option value="JH">Jharkhand</option><option value="KA">Karnataka</option><option value="KL">Kerala</option><option value="LA">Ladakh</option><option value="LD">Lakshadweep</option><option value="MP">Madhya Pradesh</option><option value="MH">Maharashtra</option><option value="MN">Manipur</option><option value="ML">Meghalaya</option><option value="MZ">Mizoram</option><option value="NL">Nagaland</option><option value="OR">Odisha</option><option value="PY">Puducherry</option><option value="PB">Punjab</option><option value="RJ">Rajasthan</option><option value="SK">Sikkim</option><option value="TN">Tamil Nadu</option><option value="TS">Telangana</option><option value="TR">Tripura</option><option value="UP">Uttar Pradesh</option><option value="UK">Uttarakhand</option><option value="WB">West Bengal</option></select>
+required autoComplete="shipping address-level1" className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"><option value="null">Select state</option><option value="AN">Andaman and Nicobar Islands</option><option value="AP">Andhra Pradesh</option><option value="AR">Arunachal Pradesh</option><option value="AS">Assam</option><option value="BR">Bihar</option><option value="CH">Chandigarh</option><option value="CG">Chhattisgarh</option><option value="DN">Dadra and Nagar Haveli</option><option value="DD">Daman and Diu</option><option value="DL">Delhi</option><option value="GA">Goa</option><option value="GJ">Gujarat</option><option value="HR">Haryana</option><option value="HP">Himachal Pradesh</option><option value="JK">Jammu and Kashmir</option><option value="JH">Jharkhand</option><option value="KA">Karnataka</option><option value="KL">Kerala</option><option value="LA">Ladakh</option><option value="LD">Lakshadweep</option><option value="MP">Madhya Pradesh</option><option value="MH">Maharashtra</option><option value="MN">Manipur</option><option value="ML">Meghalaya</option><option value="MZ">Mizoram</option><option value="NL">Nagaland</option><option value="OR">Odisha</option><option value="PY">Puducherry</option><option value="PB">Punjab</option><option value="RJ">Rajasthan</option><option value="SK">Sikkim</option><option value="TN">Tamil Nadu</option><option value="TS">Telangana</option><option value="TR">Tripura</option><option value="UP">Uttar Pradesh</option><option value="UK">Uttarakhand</option><option value="WB">West Bengal</option></select>
                                   </div>
                               </div>
 
@@ -365,7 +361,7 @@ required autoComplete="shipping address-level1" className="block w-full border-g
                         Info about your content 
                       </p>
                   </div>
-                  <div className="mt-5 md:mt-0 md:col-span-2">
+                {userinfo?.platforms?  <div className="mt-5 md:mt-0 md:col-span-2">
                 
                       <form action="#" method="POST" onSubmit={handleContentInfo}>
                     
@@ -431,7 +427,7 @@ required autoComplete="category" className="block w-full border-gray-300 rounded
                                           type="text"
                                           name="title"
                                           id="title"
-                                          value={userinfo.platforms[0].profile}
+                                          value={userinfo?.platforms[0]?.profile}
                                           onChange={(e)=>{
                                             setUserinfo({
                                               ...userinfo,platforms:[{
@@ -451,12 +447,12 @@ required autoComplete="category" className="block w-full border-gray-300 rounded
                                           id="platform"
                                           disabled
                                           autoComplete="platform"
-                                          value={userinfo.platforms[0].platform}
+                                          value={userinfo.platforms[0]?.platform}
                                           className="mt-1 focus:ring-indigo-500  focus:border-indigo-500 block w-1/2 shadow-sm sm:text-sm border-gray-300 rounded-md"
                                       />
     
                                           <select name="followers" id="followers" 
-value={userinfo.platforms[0].followers}
+value={userinfo.platforms[0]?.followers}
                                           onChange={(e)=>{
                                             setUserinfo({
                                               ...userinfo,platforms:[{
@@ -476,7 +472,7 @@ value={userinfo.platforms[0].followers}
                                           type="text"
                                           name="title"
                                           id="title"
-                                          value={userinfo.platforms[1].profile}
+                                          value={userinfo.platforms[1]?.profile}
                                           onChange={(e)=>{
                                             setUserinfo({
                                               ...userinfo,platforms:[{
@@ -496,12 +492,12 @@ value={userinfo.platforms[0].followers}
                                           id="platform"
                                           disabled
                                           autoComplete="platform"
-                                          value={userinfo.platforms[1].platform}
+                                          value={userinfo.platforms[1]?.platform}
                                           className="mt-1 focus:ring-indigo-500  focus:border-indigo-500 block w-1/2 shadow-sm sm:text-sm border-gray-300 rounded-md"
                                       />
     
                                           <select name="followers" id="followers" 
-value={userinfo.platforms[0].followers}
+value={userinfo.platforms[1]?.followers}
                                           onChange={(e)=>{
                                             setUserinfo({
                                               ...userinfo,platforms:[{
@@ -520,11 +516,11 @@ value={userinfo.platforms[0].followers}
                                           type="text"
                                           name="title"
                                           id="title"
-                                          value={userinfo.platforms[2].profile}
+                                          value={userinfo.platforms[2]?.profile}
                                           onChange={(e)=>{
                                             setUserinfo({
                                               ...userinfo,platforms:[{
-                                                ...userinfo.platforms[1],
+                                                ...userinfo.platforms[2],
                                                 profile:e.target.value
                                               }]
                                             })
@@ -540,12 +536,12 @@ value={userinfo.platforms[0].followers}
                                           id="platform"
                                           disabled
                                           autoComplete="platform"
-                                          value={userinfo.platforms[2].platform}
+                                          value={userinfo.platforms[2]?.platform}
                                           className="mt-1 focus:ring-indigo-500  focus:border-indigo-500 block w-1/2 shadow-sm sm:text-sm border-gray-300 rounded-md"
                                       />
     
                                           <select name="followers" id="followers" 
-value={userinfo.platforms[0].followers}
+value={userinfo.platforms[2]?.followers}
                                           onChange={(e)=>{
                                             setUserinfo({
                                               ...userinfo,platforms:[{
@@ -558,6 +554,57 @@ value={userinfo.platforms[0].followers}
                                           }
     required autoComplete="followers" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-1/2 shadow-sm sm:text-sm border-gray-300 rounded-md"><option value="select">select your followers</option><option value="0-1k">0-1k</option><option value="1-5k">1-5k</option><option value="5-10k">5-10k</option></select>
                                       </div>
+                             
+                                   {/* {
+userinfo?.platforms?.map((item,index)=>{ 
+                                    return(
+                                      <div className="mt-1 flex gap-2" key={index} >
+                                      <input
+                                          type="text"
+                                          name="title"
+                                          id="title"
+                                          value={item?.profile}
+                                          onChange={(e)=>{
+                                            setUserinfo({
+                                              ...userinfo,platforms:[{
+                                                ...userinfo.platforms[index],
+                                                profile:e.target.value
+                                              }]
+                                            })
+
+                                          }
+                                          }
+                                          autoComplete="instagramTitle"
+                                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-1/2 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                      />
+                                      <input
+                                          type="text"
+                                          name="platform"
+                                          id="platform"
+                                          disabled
+                                          autoComplete="platform"
+                                          value={item?.platform}
+
+                                          className="mt-1 focus:ring-indigo-500  focus:border-indigo-500 block w-1/2 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                      />
+    
+                                          <select name="followers" id="followers" 
+value={item?.followers}
+                                          onChange={(e)=>{
+                                            setUserinfo({
+                                              ...userinfo,platforms:[{
+                                                ...userinfo.platforms[index],
+                                                followers:e.target.value
+                                              }]
+                                            })
+                                          }
+
+                                          }
+    required autoComplete="followers" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-1/2 shadow-sm sm:text-sm border-gray-300 rounded-md"><option value="select">select your followers</option><option value="0-1k">0-1k</option><option value="1-5k">1-5k</option><option value="5-10k">5-10k</option></select>
+                                      </div>
+                                    )
+                                        })
+                                   } */}
                               
                             
                                
@@ -582,7 +629,7 @@ value={userinfo.platforms[0].followers}
                               </button>
                           </div>
                       </form>
-                  </div>
+                  </div>:""}
               </div>
             </div>
       
@@ -608,7 +655,7 @@ value={userinfo.platforms[0].followers}
                                     Packages
                                   </label>
                                 {
-userinfo.packages.map((item,index)=>{ 
+userinfo?.packages?.map((item,index)=>{ 
                                     return(
                                   <div className="mt-1 grid grid-cols-6 gap-2" key={index}> 
                                   <input
@@ -680,12 +727,19 @@ value={item.description} rows="3" className="shadow-sm focus:ring-indigo-500 foc
                                   )
                                   
                                 }
-                                  <p className="flex justify-end cursor-pointer px-2 py-1 bg-gray-200 w-max m-1 rounded-md ml-auto" onClick={()=>  setPackages([...packages,{
-                                          platform: "instagram",
-                                          title:"",
-                                          price: "",
-                                          description: "",
-                                        }])}>+</p>
+                                  <p className="flex justify-end cursor-pointer px-2 py-1 bg-gray-200 w-max m-1 rounded-md ml-auto" onClick={()=>  
+                                    setUserinfo({
+                                      ...userinfo,packages:[...userinfo.packages,{
+                                        title:"",
+                                        platform:"",
+                                        price:"",
+                                        description:""
+                                      }]
+                                    })
+                                  }
+                                    >+</p>
+                                
+
                               </div>
                           
 

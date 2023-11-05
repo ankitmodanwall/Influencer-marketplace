@@ -12,7 +12,7 @@ const CreatorSchema = new mongoose.Schema({
 
     category:{type:String,default:""},
     platforms:{type:Array,default:[]},
-    bannerImage:{type: Array,default:""},
+    bannerImage:{type: String,default:""},
     achievments:{type:Array,default:[]},
     description:{type:String,default:""},
     packages:{type:Array,default:[]},

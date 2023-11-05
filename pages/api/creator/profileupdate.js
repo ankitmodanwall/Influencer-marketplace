@@ -9,6 +9,7 @@ const login = async (req, res) => {
         if (credentials === process.env.USER_ID + ":" + process.env.PASSWORD) {
             try {
                 const creator = await Creator.findOne({ email: req.body.email });
+                console.log(creator);
                 if (creator) {
                     creator.name=req.body.name,
                     creator.phone=req.body.phone,
@@ -21,6 +22,24 @@ const login = async (req, res) => {
                     await Creator.create({
                         name: req.body.name,
                         email: req.body.email,
+                        username: req.body.username,
+                        platforms: [
+                            {
+                              platform: "Instagram",
+                              followers: "",
+                              profile: "",
+                            },
+                            {
+                              platform: "Youtube",
+                              followers: "",
+                              profile:""
+                            },
+                            {
+                              platform: "Facebook",
+                              followers: "1000",
+                              profile:""
+                            },
+                          ],
                         role: "creator",
                     });
                     res.status(200).json({ success: true, message: "Creator Added" });
@@ -28,6 +47,7 @@ const login = async (req, res) => {
                 }
 
             } catch (err) {
+                console.log(err);
                 res.status(200).json({ success: false, message: 'Invalid request' });
             }
 

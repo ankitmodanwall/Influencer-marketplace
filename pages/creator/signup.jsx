@@ -45,6 +45,7 @@ export default function Example() {
                         body: JSON.stringify(userInfo),
                     }).then((res) => res.json())
                     .then((dat) => {
+                        if(dat.success){
                         toast.success(dat.message, {
                             position: "top-left",
                             autoClose: 5000,
@@ -60,11 +61,21 @@ export default function Example() {
                         }
                         setTimeout(() => {
                             router.push("/creator/profilesetup")
-                        }, 1000)
+                        }, 1000)}
+                        else{
+                            toast.error(dat.error, {
+                                position: "top-left",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "light",
+                            });
+                        }
                     })
-                    // setTimeout(() => {
-                    //     router.push("/creator")
-                    // }, 1000)
+                  
                 } else {
                     toast.error(data.error, {
                         position: "top-left",
