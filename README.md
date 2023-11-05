@@ -1,41 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Influenzar
 
-## Getting Started
+Influenzar is a marketplace designed for influencers and brands to connect and collaborate, enabling influencers to showcase their services and brands to discover and collaborate with suitable influencers. The platform facilitates the sale of influencer services at competitive market prices, fostering beneficial collaborations between creators and brands.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### For Brands:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Effortless Creator Discovery:** Brands can easily filter through a database of creators and influencers.
+- **Direct Connection:** Streamlined connection with creators for campaigns and projects.
+- **Price Suggestions and Creator Capabilities:** Insights into pricing strategies and influencer capabilities.
+- **Detailed Filtering:** Ability to filter creators based on categories, followers, and location.
+- **Communication and Transaction:** Securely hold payments until the completion of agreed work.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### For Creators:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- **Enhanced Visibility:** Increased visibility among brands.
+- **Accessible Profile Setup:** Seamless profile creation to showcase skills and services.
+- **Fair Price Recommendations:** Guidance on pricing strategies.
+- **Targeted Reach:** Enhanced filters to target specific audiences and brands.
+- **Secure Transactions:** Assurance that payments are secured until work completion.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## User Sign-Up Options
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Join as Brand:** Access the database of creators for collaborations.
+- **Join as Creator:** Register and set up profiles to connect with brands.
 
-## Learn More
+## Revenue Model
 
-To learn more about Next.js, take a look at the following resources:
+Our revenue model is based on a percentage cut on each successful deal completed between brands and creators.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# Influencer-marketplace
+Join us in revolutionizing the influencer marketing landscape, creating meaningful and profitable partnerships between brands and creators.
