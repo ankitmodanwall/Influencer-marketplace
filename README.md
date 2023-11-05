@@ -1,10 +1,52 @@
-# Influenzar
+### Table of contents
 
-Influenzar is a marketplace designed for influencers and brands to connect and collaborate, enabling influencers to showcase their services and brands to discover and collaborate with suitable influencers. The platform facilitates the sale of influencer services at competitive market prices, fostering beneficial collaborations between creators and brands.
+- [Problem Statement](#problem-statement)
+- [Challenges faced by Influencers](#for-influencers)
+- [Challenges faced by Brands](#brands-challenges)
+- [How Influenzar (our platform) Solves These Challenges](#how-influenzar-solves-these-challenges)
+- [Features (Brands)](#for-brands)
+- [Features (Creators)](#for-creators)
+- [User Sign-Up Options](#user-sign-up-options)
+- [Revenue Model](#revenue-model)
+- [Tech Stack](#tech-stack)
+
+### Links
+
+**Demo Video**: (TODO link to set)
+**Live Site**: https://influenzar.vercel.app
+**Github**:https://github.com/theonlyjunaid/Influencer-marketplace
+
+## Problem Statement
+
+**Influenzar**: **A Marketplace Connecting Influencers and Brands**
+
+Influenzar addresses the challenges faced by both influencers and brands in the ever-evolving landscape of digital marketing. The platform serves as a centralized marketplace, offering a solution that enables seamless collaboration between influencers and brands.
+
+## The Challenge
+
+### For Influencers:
+
+- **Showcasing Services:** Influencers often struggle to effectively showcase their services to potential brand partners.
+- **Pricing Strategy:** Determining competitive yet fair market prices for their services can be challenging.
+- **Visibility:** Gaining visibility and expanding their reach among relevant brands is a persistent challenge.
+
+### Brands Challenges:
+
+- **Discovering Suitable Influencers:** Identifying suitable influencers for targeted marketing campaigns is time-consuming and complex.
+- **Negotiation and Communication:** Establishing a direct line of communication and negotiation with influencers can be challenging.
+- **ROI and Campaign Effectiveness:** Ensuring that campaigns reach the right audience and deliver a satisfactory return on investment poses a continuous challenge.
+
+[move back to table of content](#table-of-contents)
+
+## How Influenzar Solves These Challenges
+
+Influenzar offers a comprehensive solution by providing a platform where influencers can effectively showcase their services while brands can seamlessly discover, connect, and collaborate with suitable influencers. The platform facilitates the sale of influencer services at competitive market prices, fostering beneficial collaborations between creators and brands.
+
+[move back to table of content](#table-of-contents)
 
 <img width="1256" alt="Screenshot 2023-11-05 at 11 18 03 AM" src="https://github.com/theonlyjunaid/Influencer-marketplace/assets/92316166/92828b03-bc1b-4680-bec0-b5adaaf374d9">
 
-## Features
+## Key Features
 
 ### For Brands:
 
@@ -21,7 +63,9 @@ Influenzar is a marketplace designed for influencers and brands to connect and c
 - **Fair Price Recommendations:** Guidance on pricing strategies.
 - **Targeted Reach:** Enhanced filters to target specific audiences and brands.
 - **Secure Transactions:** Assurance that payments are secured until work completion.
-<img width="1129" alt="Screenshot 2023-11-05 at 11 22 45 AM" src="https://github.com/theonlyjunaid/Influencer-marketplace/assets/92316166/d51acbc0-7e80-4773-aee4-f03062e0124a">
+  <img width="1129" alt="Screenshot 2023-11-05 at 11 22 45 AM" src="https://github.com/theonlyjunaid/Influencer-marketplace/assets/92316166/d51acbc0-7e80-4773-aee4-f03062e0124a">
+
+[move back to table of content](#table-of-contents)
 
 ## User Sign-Up Options
 
@@ -30,8 +74,24 @@ Influenzar is a marketplace designed for influencers and brands to connect and c
 
 <img width="1256" alt="Screenshot 2023-11-05 at 11 21 26 AM" src="https://github.com/theonlyjunaid/Influencer-marketplace/assets/92316166/f2aee92c-35ab-4df1-a309-a7d28a1e087d">
 
+[move back to table of content](#table-of-contents)
+
 ## Revenue Model
 
 Our revenue model is based on a percentage cut on each successful deal completed between brands and creators.
 
 Join us in revolutionizing the influencer marketing landscape, creating meaningful and profitable partnerships between brands and creators.
+
+[move back to table of content](#table-of-contents)
+
+### Tech Stack
+
+- Next js
+- Github
+- Vercel
+- MongoDB
+- Uploadthing & S3 (for image upload)
+- Shadcn-UI
+- Tailwind CSS
+
+[move back to table of content](#table-of-contents)
