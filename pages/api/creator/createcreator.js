@@ -10,14 +10,10 @@ const login = async (req, res) => {
             try {
                 const creator = await Creator.findOne({ email: req.body.email });
                 if (creator) {
-                    creator.packages = req.body.packages
-                    await creator.save();
-                    res.status(200).json({ success: true, message: "packages Updated" });
+                    res.status(200).json({ success: true, creator: creator });
                     return;
                 }else{
-                 
                     res.status(400).json({ success: false, message: "Creator not exit" });
-
                 }
 
             } catch (err) {

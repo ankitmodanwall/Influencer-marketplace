@@ -10,7 +10,8 @@ export default function Example() {
         name: "",
         email: "",
         password: "",
-        role:"creator"
+        role:"creator",
+        username:""
     })
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -44,6 +45,7 @@ export default function Example() {
                         body: JSON.stringify(userInfo),
                     }).then((res) => res.json())
                     .then((dat) => {
+                        if(dat.success){
                         toast.success(dat.message, {
                             position: "top-left",
                             autoClose: 5000,
@@ -59,11 +61,21 @@ export default function Example() {
                         }
                         setTimeout(() => {
                             router.push("/creator/profilesetup")
-                        }, 1000)
+                        }, 1000)}
+                        else{
+                            toast.error(dat.error, {
+                                position: "top-left",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "light",
+                            });
+                        }
                     })
-                    // setTimeout(() => {
-                    //     router.push("/creator")
-                    // }, 1000)
+                  
                 } else {
                     toast.error(data.error, {
                         position: "top-left",
@@ -102,7 +114,17 @@ Join as a creator                </h1>
                 <div className=" w-full ">
                     <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 w-80 my-10 mx-auto">
 
-                        
+                    <input
+                            onChange={handleChange}
+                            id="username"
+                            name="username"
+                            type="text"
+                            value={userInfo.username}
+                         
+                            className="border-2 border-gray-300 p-2 rounded-lg"
+                            placeholder="username"
+
+                        />
                         <input
                             onChange={handleChange}
                             id="text"

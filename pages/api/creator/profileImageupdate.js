@@ -10,7 +10,7 @@ const login = async (req, res) => {
             try {
                 const creator = await Creator.findOne({ email: req.body.email });
                 if (creator) {
-                    creator.profileImage = req.body.profileImage?req.body.profileImage:creator.profileImage;
+                    creator.profileImage = req.body.profileImage;
                     await creator.save();
                     res.status(200).json({ success: true, message: "Profile Image Updated" });
                     return;
