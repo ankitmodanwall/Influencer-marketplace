@@ -12,11 +12,12 @@
 
 ### Links
 
-**Demo Video**: https://youtu.be/d8hstLFP1Js
-
 **Presentation Link**:https://www.canva.com/design/DAFzRGoRlSA/xr8iRqjdtxOcBDA-_bRI6g/edit?utm_content=DAFzRGoRlSA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 **Live Site**: https://influenzar.vercel.app
 **Github**:https://github.com/theonlyjunaid/Influencer-marketplace
+**Demo Video**: https://youtu.be/d8hstLFP1Js
+
+
 
 ## Problem Statement
 
@@ -98,4 +99,4 @@ Join us in revolutionizing the influencer marketing landscape, creating meaningf
 
 [move back to table of content](#table-of-contents)
 
-<iframe width="966" height="547" src="https://www.youtube.com/embed/d8hstLFP1Js" title="Influenzar - influencer marketplace" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
