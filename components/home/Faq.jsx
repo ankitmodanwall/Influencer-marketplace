@@ -1,21 +1,24 @@
+
 const Faq = () => {
   return (
     <div>
-      <div class='faqs-holder'>
+      <div className='faqs-holder'>
         <div
-          class='faq-holder'
+          className='faq-holder'
           itemscope=''
           itemprop='mainEntity'
           itemtype='https://schema.org/Question'
         >
-          <div class='faq-title-holder'>
-            <h3 class='faq-question' itemprop='name'>
+          <div className='faq-title-holder'>
+            <h3 className='faq-question' itemprop='name'>
               What is Influencer Marketing?
             </h3>
             <img
-              class='faq-btn'
+              className='faq-btn'
               src='https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/plus.svg'
               loading='lazy'
+
+              alt="ds"
             />
           </div>
           <div
@@ -23,12 +26,12 @@ const Faq = () => {
             itemprop='acceptedAnswer'
             itemtype='https://schema.org/Answer'
           >
-            <div class='faq-answer' itemprop='text'>
+            <div className='faq-answer' itemprop='text'>
               Influencer marketing is a digital marketing strategy that involves
               collaborating with individuals, known as influencers, who have a
               dedicated and engaged following on social media platforms and
               other online channels. These influencers can impact their
-              followers' purchasing decisions due to their credibility and
+              followers purchasing decisions due to their credibility and
               authority in specific niches or industries. Brands partner with
               influencers to promote their products or services authentically,
               build social proof, and leverage their influence to reach a larger
@@ -38,17 +41,17 @@ const Faq = () => {
         </div>
 
         <div
-          class='faq-holder'
+          className='faq-holder'
           itemscope=''
           itemprop='mainEntity'
           itemtype='https://schema.org/Question'
         >
-          <div class='faq-title-holder'>
-            <h3 class='faq-question' itemprop='name'>
+          <div className='faq-title-holder'>
+            <h3 className='faq-question' itemprop='name'>
               How Does Influencer Marketing Work?
             </h3>
             <img
-              class='faq-btn'
+              className='faq-btn'
               src='https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/plus.svg'
               loading='lazy'
             />
@@ -58,10 +61,10 @@ const Faq = () => {
             itemprop='acceptedAnswer'
             itemtype='https://schema.org/Answer'
           >
-            <div class='faq-answer' itemprop='text'>
+            <div className='faq-answer' itemprop='text'>
               Influencer marketing operates by identifying suitable influencers
               for your brand, establishing a partnership, and creating and
-              distributing content through the influencer's channels. This
+              distributing content through the influencers channels. This
               content can take various forms, including sponsored posts,
               reviews, tutorials, or endorsements. The influencer shares this
               content with their audience, effectively introducing your brand or
@@ -74,23 +77,23 @@ const Faq = () => {
               </a>
               . The key to successful influencer marketing lies in crafting
               authentic and relevant content that resonates with both the
-              influencer's followers and your brand's message.
+              influencers followers and your brands message.
             </div>
           </div>
         </div>
 
         <div
-          class='faq-holder'
+          className='faq-holder'
           itemscope=''
           itemprop='mainEntity'
           itemtype='https://schema.org/Question'
         >
-          <div class='faq-title-holder'>
-            <h3 class='faq-question' itemprop='name'>
+          <div className='faq-title-holder'>
+            <h3 className='faq-question' itemprop='name'>
               Why is Influencer Marketing Important?
             </h3>
             <img
-              class='faq-btn'
+              className='faq-btn'
               src='https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/plus.svg'
               loading='lazy'
             />
@@ -100,7 +103,7 @@ const Faq = () => {
             itemprop='acceptedAnswer'
             itemtype='https://schema.org/Answer'
           >
-            <div class='faq-answer' itemprop='text'>
+            <div className='faq-answer' itemprop='text'>
               Influencer marketing is important because it enables brands to
               connect with their target audience in a more genuine and engaging
               manner. Unlike traditional advertising, influencer marketing feels
@@ -113,17 +116,17 @@ const Faq = () => {
         </div>
 
         <div
-          class='faq-holder'
+          className='faq-holder'
           itemscope=''
           itemprop='mainEntity'
           itemtype='https://schema.org/Question'
         >
-          <div class='faq-title-holder'>
-            <h3 class='faq-question' itemprop='name'>
+          <div className='faq-title-holder'>
+            <h3 className='faq-question' itemprop='name'>
               How Can I Find the Right Influencers for My Brand?
             </h3>
             <img
-              class='faq-btn'
+              className='faq-btn'
               src='https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/plus.svg'
               loading='lazy'
             />
@@ -133,7 +136,7 @@ const Faq = () => {
             itemprop='acceptedAnswer'
             itemtype='https://schema.org/Answer'
           >
-            <div class='faq-answer' itemprop='text'>
+            <div className='faq-answer' itemprop='text'>
               Start by identifying your target audience and the platforms they
               use. Then, use the Collabstr influencer marketing tool to{' '}
               <a
@@ -144,7 +147,7 @@ const Faq = () => {
               </a>{' '}
               within your niche. Use the gender, price, location, and other
               filters to narrow down relevant influencers as much as possible.
-              Once you find an influencer that you’re interested in working
+              Once you find an influencer that youre interested in working
               with, you can simply purchase one of their pre-defined content
               packages, or send them a custom offer directly through their
               profile.
@@ -153,17 +156,17 @@ const Faq = () => {
         </div>
 
         <div
-          class='faq-holder'
+          className='faq-holder'
           itemscope=''
           itemprop='mainEntity'
           itemtype='https://schema.org/Question'
         >
-          <div class='faq-title-holder'>
-            <h3 class='faq-question' itemprop='name'>
+          <div className='faq-title-holder'>
+            <h3 className='faq-question' itemprop='name'>
               What Are the Benefits of Influencer Marketing for my brand?
             </h3>
             <img
-              class='faq-btn'
+              className='faq-btn'
               src='https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/plus.svg'
               loading='lazy'
             />
@@ -173,8 +176,8 @@ const Faq = () => {
             itemprop='acceptedAnswer'
             itemtype='https://schema.org/Answer'
           >
-            <div class='faq-answer' itemprop='text'>
-              Influencer marketing helps expand your brand's reach, build trust
+            <div className='faq-answer' itemprop='text'>
+              Influencer marketing helps expand your brands reach, build trust
               and credibility through social proof, drive conversions, and can
               be more cost-effective than some traditional marketing methods.
               Additionally, influencer marketing allows you to tap into highly
@@ -187,17 +190,17 @@ const Faq = () => {
         </div>
 
         <div
-          class='faq-holder'
+          className='faq-holder'
           itemscope=''
           itemprop='mainEntity'
           itemtype='https://schema.org/Question'
         >
-          <div class='faq-title-holder'>
-            <h3 class='faq-question' itemprop='name'>
+          <div className='faq-title-holder'>
+            <h3 className='faq-question' itemprop='name'>
               How Much Does Influencer Marketing Cost?
             </h3>
             <img
-              class='faq-btn'
+              className='faq-btn'
               src='https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/plus.svg'
               loading='lazy'
             />
@@ -207,9 +210,9 @@ const Faq = () => {
             itemprop='acceptedAnswer'
             itemtype='https://schema.org/Answer'
           >
-            <div class='faq-answer' itemprop='text'>
+            <div className='faq-answer' itemprop='text'>
               The cost of influencer marketing varies widely depending on
-              factors such as the influencer's reach, niche, and{' '}
+              factors such as the influencers reach, niche, and{' '}
               <a
                 href='https://collabstr.com/instagram-engagement-rate-calculator'
                 target='_blank'
@@ -220,7 +223,7 @@ const Faq = () => {
               macro-influencers or celebrities. Some influencers may work on a
               per-post basis, while others prefer ongoing partnerships. If you
               have a budget in mind, consider using the price filters found in
-              Collabstr’s search tool to narrow down the influencers that fit
+              Collabstrs search tool to narrow down the influencers that fit
               within your budget, this will save you time during the influencer
               discovery process.
             </div>
@@ -228,17 +231,17 @@ const Faq = () => {
         </div>
 
         <div
-          class='faq-holder'
+          className='faq-holder'
           itemscope=''
           itemprop='mainEntity'
           itemtype='https://schema.org/Question'
         >
-          <div class='faq-title-holder'>
-            <h3 class='faq-question' itemprop='name'>
+          <div className='faq-title-holder'>
+            <h3 className='faq-question' itemprop='name'>
               What Are the Different Types of Influencer Marketing Campaigns?
             </h3>
             <img
-              class='faq-btn'
+              className='faq-btn'
               src='https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/plus.svg'
               loading='lazy'
             />
@@ -248,11 +251,11 @@ const Faq = () => {
             itemprop='acceptedAnswer'
             itemtype='https://schema.org/Answer'
           >
-            <div class='faq-answer' itemprop='text'>
+            <div className='faq-answer' itemprop='text'>
               Influencer marketing can accommodate various campaign types,
               including product reviews, sponsored posts, takeovers, giveaways,
               and affiliate marketing. The type of campaign you choose should
-              align with your goals and the influencer's strengths. You can use
+              align with your goals and the influencers strengths. You can use
               a{' '}
               <a
                 href='https://collabstr.com/influencer-campaign-brief-template'
@@ -269,17 +272,17 @@ const Faq = () => {
         </div>
 
         <div
-          class='faq-holder'
+          className='faq-holder'
           itemscope=''
           itemprop='mainEntity'
           itemtype='https://schema.org/Question'
         >
-          <div class='faq-title-holder'>
-            <h3 class='faq-question' itemprop='name'>
+          <div className='faq-title-holder'>
+            <h3 className='faq-question' itemprop='name'>
               How Do I Measure the Success of an Influencer Marketing Campaign?
             </h3>
             <img
-              class='faq-btn'
+              className='faq-btn'
               src='https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/plus.svg'
               loading='lazy'
             />
@@ -289,35 +292,35 @@ const Faq = () => {
             itemprop='acceptedAnswer'
             itemtype='https://schema.org/Answer'
           >
-            <div class='faq-answer' itemprop='text'>
+            <div className='faq-answer' itemprop='text'>
               To measure the success of an influencer marketing campaign, you
               can track key performance indicators (KPIs) such as click-through
               rates, conversions, and return on investment (ROI). Typically,
               this tracking would be done through your own means, such as a
               discount code or unique link that is used to track the
-              influencer’s impact on your side. Keep in mind that a large part
+              influencers impact on your side. Keep in mind that a large part
               of influencer marketing is social proof and social awareness, so
               many viewers may see your product and navigate to your website
-              through other methods besides clicking the influencer’s link
+              through other methods besides clicking the influencers link
               directly. Additionally, you can gather feedback from the
-              influencer and analyze audience sentiment to gauge the campaign's
+              influencer and analyze audience sentiment to gauge the campaigns
               impact on brand perception.
             </div>
           </div>
         </div>
 
         <div
-          class='faq-holder'
+          className='faq-holder'
           itemscope=''
           itemprop='mainEntity'
           itemtype='https://schema.org/Question'
         >
-          <div class='faq-title-holder'>
-            <h3 class='faq-question' itemprop='name'>
+          <div className='faq-title-holder'>
+            <h3 className='faq-question' itemprop='name'>
               What Are the Common Mistakes to Avoid in Influencer Marketing?
             </h3>
             <img
-              class='faq-btn'
+              className='faq-btn'
               src='https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/plus.svg'
               loading='lazy'
             />
@@ -327,7 +330,7 @@ const Faq = () => {
             itemprop='acceptedAnswer'
             itemtype='https://schema.org/Answer'
           >
-            <div class='faq-answer' itemprop='text'>
+            <div className='faq-answer' itemprop='text'>
               Common mistakes in influencer marketing include failing to define
               clear campaign objectives and expectations and neglecting to
               communicate changes in objectives, timelines, and other aspects
