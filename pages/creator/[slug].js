@@ -1,7 +1,9 @@
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import mongoose from 'mongoose';
-import Creator from '@/model/Creator';
+import { useRouter } from "next/router";
+import Image from "next/image";
+import mongoose from "mongoose";
+import Creator from "@/model/Creator";
+import { Badge } from "@/components/ui/badge";
+import { BiLogoInstagramAlt, BiLogoYoutube } from "react-icons/bi";
 
 export default function Page({ creator }) {
   const {
@@ -12,37 +14,47 @@ export default function Page({ creator }) {
     bannerImages,
     category,
     city,
-    state
+    state,
   } = creator;
-
   return (
-    <>
-      <div className='flex'>
-        <div className='mx-auto my-20'>
-          <div className='justify-center grid grid-cols-3 gap-2'>
-            {[...Array(2)].map((bannerImageLink, i) => (
-              <div
-                key={i}
-                className={`row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-2 dark:bg-neutral-900 ${
-                  i === 0 || i === 3 ? 'col-span-2' : ''
-                }`}
-              >
-                <Image
-                  src={
-                    'https://www.influencer.in/wp-content/uploads/2020/12/Sadaf-Hussain-a-famous-Indian-Instagrammer-shares-his-amazing-make-at-home-recipes-with-his-29.3K-followers..png'
-                  }
-                  alt='product preview'
-                  width={350}
-                  height={350}
-                  quality={100}
-                  className='rounded-lg h-[300px] object-cover shadow-md ring-1 ring-gray-900/10'
-                />
-              </div>
-            ))}
+    <div className="w-3/4 mx-auto flex flex-col gap-y-3">
+      <div className="mt-16 flex items-center justify-start gap-x-5">
+        <Image
+          src={profileImage}
+          height={180}
+          width={180}
+          alt="user"
+          className="rounded-full object-cover h-28 w-28"
+        />
+        <div>
+          <h3>
+            {name.toUpperCase()}{" "}
+            <Badge variant={"secondary"} className={"shadow-lg"}>
+              {category}
+            </Badge>
+          </h3>
+          <span className="text-gray-500">
+            {city || "Mumbai"}, {state || "Maharashtra"}
+          </span>
+          <div className="flex gap-x-2 items-center justify-start text-2xl">
+            <BiLogoInstagramAlt />
+            <BiLogoYoutube />
           </div>
         </div>
       </div>
-    </>
+      <div>
+        <p className="w-[80%] text-gray-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+          explicabo. Minus, voluptatibus tempore maiores repellat, placeat
+          mollitia animi voluptatum corrupti vero, ratione voluptatem ad labore
+          ducimus eos illo quia dicta.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-3xl">Packages</h3>
+      </div>
+    </div>
   );
 }
 
@@ -53,7 +65,7 @@ export async function getServerSideProps({ params }) {
   let creator = await Creator.findOne({ username: params.slug });
   return {
     props: {
-      creator: JSON.parse(JSON.stringify(creator))
-    }
+      creator: JSON.parse(JSON.stringify(creator)),
+    },
   };
 }
