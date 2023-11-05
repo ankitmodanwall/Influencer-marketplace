@@ -16,8 +16,18 @@ export default function Page({ creator }) {
     city,
     state,
   } = creator;
+  console.log(creator);
   return (
     <div className="w-3/4 mx-auto flex flex-col gap-y-3">
+      <div>
+        <Image
+          src={creator.bannerImage}
+          height={780}
+          width={780}
+          alt="Banner Image"
+          className="w-[100vw]"
+        />
+      </div>
       <div className="mt-16 flex items-center justify-start gap-x-5">
         <Image
           src={profileImage}
@@ -43,16 +53,31 @@ export default function Page({ creator }) {
         </div>
       </div>
       <div>
-        <p className="w-[80%] text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-          explicabo. Minus, voluptatibus tempore maiores repellat, placeat
-          mollitia animi voluptatum corrupti vero, ratione voluptatem ad labore
-          ducimus eos illo quia dicta.
-        </p>
+        <p className="w-[80%] text-gray-600">{creator.description}</p>
       </div>
 
       <div>
-        <h3 className="text-3xl">Packages</h3>
+        <h3 className="text-3xl font-bold">Packages</h3>
+        <div className="packages grid gap-4 grid-cols-3 p-4">
+          {creator.packages?.map((item, idx) => (
+            <div key={idx} className="package p-6 border rounded-xl">
+              <h1 className="text-2xl font-bold">{item.title}</h1>
+              <p className="text-lg">{item.description}</p>
+              <h1 className="text-lg font-bold">{item.platform}</h1>
+              <h1 className="text-2xl font-bold">₹{item.price}</h1>
+            </div>
+          ))}
+        </div>
+        <h3 className="text-3xl font-bold">Platforms</h3>
+        <div className="packages grid gap-4 grid-cols-3 p-4">
+          {creator.platforms?.map((item, idx) => (
+            <div key={idx} className="package p-6 border rounded-xl">
+              <h1 className="text-2xl">{item.profile}</h1>
+              <h1 className="text-lg">{item.platform}</h1>
+              <h1 className="text-2xl font-bold">Followers: {item.follower}</h1>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
