@@ -12,10 +12,13 @@
 
 ### Links
 
-**Presentation Link**:https://www.canva.com/design/DAFzRGoRlSA/xr8iRqjdtxOcBDA-_bRI6g/edit?utm_content=DAFzRGoRlSA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-**Live Site**: https://influenzar.vercel.app
-**Github**:https://github.com/theonlyjunaid/Influencer-marketplace
 **Demo Video**: https://youtu.be/d8hstLFP1Js
+
+**Live Site**: https://influenzar.vercel.app
+
+**Github**:https://github.com/theonlyjunaid/Influencer-marketplace
+
+**Presentation Link**:https://www.canva.com/design/DAFzRGoRlSA/xr8iRqjdtxOcBDA-_bRI6g/edit?utm_content=DAFzRGoRlSA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 
 
