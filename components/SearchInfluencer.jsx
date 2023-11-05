@@ -22,9 +22,7 @@ export function SearchInfluencer() {
           <SelectGroup>
             <SelectLabel>Platform</SelectLabel>
             <SelectItem value="apple">YouTube</SelectItem>
-            <SelectItem value="banana">Twitter X</SelectItem>
             <SelectItem value="blueberry">Instagram</SelectItem>
-            <SelectItem value="grapes">Threads</SelectItem>
             <SelectItem value="pineapple">Facebook</SelectItem>
           </SelectGroup>
         </SelectContent>
