@@ -1,21 +1,12 @@
-import { useRouter } from "next/router";
 import Image from "next/image";
 import mongoose from "mongoose";
 import Creator from "@/model/Creator";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { BiLogoInstagramAlt, BiLogoYoutube } from "react-icons/bi";
 
 export default function Page({ creator }) {
-  const {
-    name,
-    email,
-    profileImage,
-    platforms,
-    bannerImages,
-    category,
-    city,
-    state,
-  } = creator;
+  const { name, profileImage, category, city, state } = creator;
   console.log(creator);
   return (
     <div className="w-3/4 mx-auto flex flex-col gap-y-3">
@@ -28,28 +19,34 @@ export default function Page({ creator }) {
           className="w-[100vw]"
         />
       </div>
-      <div className="mt-16 flex items-center justify-start gap-x-5">
-        <Image
-          src={profileImage}
-          height={180}
-          width={180}
-          alt="user"
-          className="rounded-full object-cover h-28 w-28"
-        />
-        <div>
-          <h3>
-            {name.toUpperCase()}{" "}
-            <Badge variant={"secondary"} className={"shadow-lg"}>
-              {category}
-            </Badge>
-          </h3>
-          <span className="text-gray-500">
-            {city || "Mumbai"}, {state || "Maharashtra"}
-          </span>
-          <div className="flex gap-x-2 items-center justify-start text-2xl">
-            <BiLogoInstagramAlt />
-            <BiLogoYoutube />
+      <div className="mt-16 flex items-center justify-between gap-x-5">
+        <div className="flex items-center justify-between gap-x-5">
+          <Image
+            src={profileImage}
+            height={180}
+            width={180}
+            alt="user"
+            className="rounded-full object-cover h-28 w-28"
+          />
+
+          <div>
+            <h3>
+              {name.toUpperCase()}{" "}
+              <Badge variant={"secondary"} className={"shadow-lg"}>
+                {category}
+              </Badge>
+            </h3>
+            <span className="text-gray-500">
+              {city || "Mumbai"}, {state || "Maharashtra"}
+            </span>
+            <div className="flex gap-x-2 items-center justify-start text-2xl">
+              <BiLogoInstagramAlt />
+              <BiLogoYoutube />
+            </div>
           </div>
+        </div>
+        <div>
+          <Button className="ml-auto">Start Deal</Button>
         </div>
       </div>
       <div>
