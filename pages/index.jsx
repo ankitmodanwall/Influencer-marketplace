@@ -20,7 +20,7 @@ const index = ({ creator }) => {
           Influencer Marketing Made Easy.
         </h1>
         <p className="mt-5 max-w-prose text-zinc-400 sm: text-lg">
-          Find and hire top Instagram, YouTube, and Facebook influencers to
+          Find and hire top Instagram, YouTube and Facebook influencers to
           create unique content for your brand
         </p>
       </MaxWidthWrapper>
