@@ -1,9 +1,9 @@
 const HowItWorks = () => {
   return (
-    <div id="howitworks">
-      <div className="row-holder">
-        <h2 className="row-title" id="how-it-works">
-          How Influencer Marketplace Works
+    <div>
+      <div className='row-holder'>
+        <h2 className='row-title' id='how-it-works'>
+          How Influenzar Works
         </h2>
         <h3 className="row-subtitle">
           Everything you need to run your influencer campaigns, and more.
